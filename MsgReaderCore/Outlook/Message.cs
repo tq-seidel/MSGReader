@@ -1863,7 +1863,6 @@ namespace MsgReader.Outlook
                 if (string.IsNullOrEmpty(tempEmail) || tempEmail.IndexOf("@", StringComparison.Ordinal) < 0)
                 {
                     var testEmail = GetMapiPropertyString(MapiTags.PR_PRIMARY_SEND_ACCT);
-
                     var i = testEmail.IndexOf("\u0001", StringComparison.Ordinal);
                     if(i > 0)
                     {
@@ -1878,20 +1877,6 @@ namespace MsgReader.Outlook
                             }
                         }
                     }
-
-                    //while (!string.IsNullOrEmpty(testEmail))
-                    //{
-                    //    var i = testEmail.IndexOf("\u0001", StringComparison.Ordinal);
-                    //    if(i > 0)
-                    //    {
-                    //        testEmail = testEmail.Substring(i);
-                    //        tempEmail = EmailAddress.GetValidEmailAddress(testEmail);
-                    //        if (tempEmail != null) break;
-                    //    } else
-                    //    {
-                    //        break;
-                    //    }
-                    //}
                 }
 
                 tempEmail = EmailAddress.RemoveSingleQuotes(tempEmail);
